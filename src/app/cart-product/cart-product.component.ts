@@ -9,7 +9,8 @@ import { CartService } from '../services/cart.service';
 })
 export class CartProductComponent implements OnInit {
 
-  @Input() product: CartProduct;
+  @Input()
+  product!: CartProduct;
   @Output() deleteProduct = new EventEmitter<number>();
   @Output() updateTotal = new EventEmitter<void>();
 
