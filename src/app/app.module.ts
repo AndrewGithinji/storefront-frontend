@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductitemComponent } from './product-item/product-item.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
@@ -18,31 +19,35 @@ import { CartProductComponent } from './cart-product/cart-product.component';
 import { ButtonComponent } from './button/button.component';
 import { AmountSelectorComponent } from './amount-selector/amount-selector.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    ProductItemComponent,
-    ProductItemDetailComponent,
-    PageNotFoundComponent,
-    HeaderComponent,
-    DashboardComponent,
-    ConfirmationComponent,
-    CheckoutFormComponent,
-    CartComponent,
-    CartProductComponent,
-    ButtonComponent,
-    AmountSelectorComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+declarations: [
+AppComponent,
+ProductListComponent,
+ProductitemComponent,
+ProductItemDetailComponent,
+PageNotFoundComponent,
+HeaderComponent,
+DashboardComponent,
+ConfirmationComponent,
+CheckoutFormComponent,
+CartComponent,
+CartProductComponent,
+ButtonComponent,
+AmountSelectorComponent
+],
+imports: [
+BrowserModule,
+AppRoutingModule,
+CommonModule,
+FormsModule,
+HttpClientModule,
+RouterModule,
+NgxSkeletonLoaderModule,
+],
+providers: [],
+bootstrap: [AppComponent]
 })
 export class AppModule { }
