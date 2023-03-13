@@ -1,3 +1,6 @@
+This project is a section of the Udacity Full-Stack Javascript Nanodegree program.
+An E-Commerce platform built with Angular.
+
 # StorefrontFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
