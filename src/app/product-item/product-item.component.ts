@@ -7,7 +7,7 @@ import { CartService } from '../services/cart.service';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductitemComponent implements OnInit {
 
   @Input() product!: Product;
   productAmount: number = 1;
