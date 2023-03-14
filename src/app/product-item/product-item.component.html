@@ -1,4 +1,4 @@
-<div class="productCard">
+<div class="productCard" *ngIf="product">
     <a routerLink="/product/{{ product.id }}">
       <img src="{{ product.url }}" />
     </a>

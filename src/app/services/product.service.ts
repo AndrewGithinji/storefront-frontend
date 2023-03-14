@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/Product';
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class ProductService {
 
   baseUrl = '/api/products';

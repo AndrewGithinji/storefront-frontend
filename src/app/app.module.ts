@@ -39,11 +39,11 @@ ButtonComponent,
 AmountSelectorComponent
 ],
 imports: [
+HttpClientModule,
 BrowserModule,
 AppRoutingModule,
 CommonModule,
 FormsModule,
-HttpClientModule,
 RouterModule,
 NgxSkeletonLoaderModule,
 ],

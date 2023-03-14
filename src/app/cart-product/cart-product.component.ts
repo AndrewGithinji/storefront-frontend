@@ -9,29 +9,31 @@ import { CartService } from '../services/cart.service';
 })
 export class CartProductComponent implements OnInit {
 
-  @Input()
-  product!: CartProduct;
-  @Output() deleteProduct = new EventEmitter<number>();
-  @Output() updateTotal = new EventEmitter<void>();
+  @Input() product!: CartProduct;
+  @Output() deleteProduct: EventEmitter<number> = new EventEmitter();
+  @Output() updateTotal: EventEmitter<void> = new EventEmitter();
 
-  productAmount = 1;
+  productAmount: number = 1;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     console.log(this.product)
-    this.productAmount = this.product.amount
+    this.productAmount = this.product?.amount | 1
   }
 
-  removeProduct(): void {
+  removeProduct = () => {
     this.cartService.removeFromCart(this.product.id)
     this.deleteProduct.emit(this.product.id);
     this.updateTotal.emit()
   }
 
-  updateAmount(amount: number): void {
-    this.cartService.updateAmount(this.product.id, amount);
-    this.updateTotal.emit()
+  updateAmount = (amount: number) => {
+    if (amount){ 
+      this.cartService.updateAmount(this.product.id, amount);
+      this.updateTotal.emit()
+
+    }
   }
 
 }
