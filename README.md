@@ -29,5 +29,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Starting the Web app
+Run `npm start` to execute the StoreFront-Frontend to open your browser on http://localhost:4200/
+
 ## Author
 Andrew Githinji ((https://github.com/AndrewGithinji))
