@@ -1,7 +1,8 @@
+import { Product } from './../../models/Product';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from '../../models/Product';
+import { filter, map, Observable, of, switchMap, tap } from 'rxjs';
+
 
 @Injectable({
   providedIn: "root"
@@ -16,8 +17,15 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
-  getProduct(id: number): Observable<Product | null> {
-    return this.http.get<Product | null>(`${this.baseUrl}/${id}`);
+  getProduct(id: number): Observable<Product> {
+    return this.http.get<Product[]>(`${this.baseUrl}`).pipe(
+      switchMap((products: Product[]) => {
+        return products.filter(product => {
+          return product.id == id
+        })
+      }),
+      tap(data => console.log(data))
+    )
   }
 
   searchProducts(term: string): Observable<Product[]> {
